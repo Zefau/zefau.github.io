@@ -1,3 +1,6 @@
-| a | b |
-| - | - |
-| a | b |
+| Adapter | Installations | Downloads | Stable | Latest | Travis |
+| - | - | - | - | - | - |
+| ioBroker.roomba | ![Number of Installations](http://iobroker.live/badges/roomba-installed.svg) | [![Downloads](https://img.shields.io/npm/dm/iobroker.roomba.svg)](https://www.npmjs.com/package/iobroker.roomba) | ![Stable version](http://iobroker.live/badges/roomba-stable.svg) | [![NPM version](http://img.shields.io/npm/v/iobroker.roomba.svg)](https://www.npmjs.com/package/iobroker.roomba) | [![Travis CI](https://travis-ci.org/Zefau/ioBroker.roomba.svg?branch=master)](https://travis-ci.org/Zefau/ioBroker.roomba) |
+| ioBroker.nuki2 | ![Number of Installations](http://iobroker.live/badges/nuki2-installed.svg) | [![Downloads](https://img.shields.io/npm/dm/iobroker.nuki2.svg)](https://www.npmjs.com/package/iobroker.nuki2) | ![Stable version](http://iobroker.live/badges/nuki2-stable.svg) | [![NPM version](http://img.shields.io/npm/v/iobroker.nuki2.svg)](https://www.npmjs.com/package/iobroker.nuki2) | [![Travis CI](https://travis-ci.org/Zefau/ioBroker.nuki2.svg?branch=master)](https://travis-ci.org/Zefau/ioBroker.nuki2) |
+| ioBroker.nello | ![Number of Installations](http://iobroker.live/badges/nello-installed.svg) | [![Downloads](https://img.shields.io/npm/dm/iobroker.nello.svg)](https://www.npmjs.com/package/iobroker.nello) | ![Stable version](http://iobroker.live/badges/nello-stable.svg) | [![NPM version](http://img.shields.io/npm/v/iobroker.nello.svg)](https://www.npmjs.com/package/iobroker.nello) | [![Travis CI](https://travis-ci.org/Zefau/ioBroker.nello.svg?branch=master)](https://travis-ci.org/Zefau/ioBroker.nello) |
+
