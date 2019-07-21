@@ -71,6 +71,9 @@ $(document).ready(function()
 			// Dependencies
 			row.append($('<td />', {}).append($('<a />', {'href': david + repo.name, 'target': '_blank'}).append($('<img />', {'src': 'https://badges.greenkeeper.io/Zefau/' + repo.name + '.svg', 'alt': 'Dependencies'}))));
 			
+			// Vulnerabilities
+			row.append($('<td />', {}).append($('<img />', {'src': 'https://img.shields.io/snyk/vulnerabilities/github/Zefau/' + repo.name + '.svg', 'alt': 'Vulnerabilities'}))));
+			
 			$('#'+key).append(row);
 		});
 	}
@@ -92,6 +95,7 @@ $(document).ready(function()
 			<th>Travis</th>
 			<th>Issues</th>
 			<th>Dependencies</th>
+			<th>Vulnerabilities</th>
 		</tr>
 	</thead>
 	<tbody id="iobroker">
