@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Zefau - ioBroker.Repositories</title>
+	<title>
+		- ioBroker.Repositories</title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css" />
 	<style>
@@ -18,11 +19,11 @@ table {
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript">
 
-const github = 'https://github.com/Zefau/';
+const github = 'https://github.com/';
 const iobroker = 'http://iobroker.live/badges/';
 const npm = 'https://www.npmjs.com/package/';
-const travis = 'https://travis-ci.org/Zefau/';
-const david = 'https://david-dm.org/Zefau/';
+const travis = 'https://travis-ci.org/';
+const david = 'https://david-dm.org/';
 
 const repositories = {
 	iobroker: [
@@ -30,7 +31,8 @@ const repositories = {
 		{name: 'ioBroker.nuki2', key: 'nuki2'},
 		{name: 'ioBroker.nello', key: 'nello'},
 		{name: 'ioBroker.plex', key: 'plex'},
-		{name: 'ioBroker.hue-lights', key: 'hue-lights'}
+		{name: 'ioBroker.hue-lights', key: 'hue-lights'},
+		{user: 'iobroker-community-adapters', name: 'ioBroker.owntracks', key: 'iobroker.owntracks'}
 	],
 	
 	apis: [
@@ -46,16 +48,17 @@ $(document).ready(function()
 	{
 		repositories[key].forEach(function(repo)
 		{
+			repo.user = repo.user || 'Zefau';
 			let row = $('<tr />', {});
 			
 			// Name
-			row.append($('<td />', {}).append($('<a />', {'text': repo.name, 'href': github + repo.name})));
+			row.append($('<td />', {}).append($('<a />', {'text': repo.name, 'href': github + repo.user + '/' + repo.name})));
 			
 			// Installations
 			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': iobroker + repo.key + '-installed.svg', 'target': '_blank'}).append($('<img />', {'src': iobroker + repo.key + '-installed.svg', 'alt': 'Number of Installations'}))));
 			
 			// Stars (Github)
-			row.append($('<td />', {}).append($('<a />', {'href': github + repo.name + '/stargazers', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/stars/Zefau/' + repo.name + '.svg', 'alt': 'Github Stars'}))));
+			row.append($('<td />', {}).append($('<a />', {'href': github + repo.user + '/' + repo.name + '/stargazers', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/stars/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Github Stars'}))));
 			
 			// Stable (ioBroker)
 			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': iobroker + repo.key + '-stable.svg', 'target': '_blank'}).append($('<img />', {'src': iobroker + repo.key + '-stable.svg', 'alt': 'Stable Release'}))));
@@ -64,16 +67,16 @@ $(document).ready(function()
 			row.append($('<td />', {}).append($('<a />', {'href': npm + (repo.npm || repo.name).toLowerCase(), 'target': '_blank'}).append($('<img />', {'src': 'http://img.shields.io/npm/v/' + (repo.npm || repo.name).toLowerCase() + '.svg', 'alt': 'NPM Release'}))));
 			
 			// Travis
-			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': travis + repo.name, 'target': '_blank'}).append($('<img />', {'src': travis + repo.name + '.svg?branch=master', 'alt': 'Travis'}))));
+			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': travis + repo.user + '/' + repo.name, 'target': '_blank'}).append($('<img />', {'src': travis + repo.user + '/' + repo.name + '.svg?branch=master', 'alt': 'Travis'}))));
 			
 			// Issues (Github)
-			row.append($('<td />', {}).append($('<a />', {'href': github + repo.name + '/issues', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/issues/Zefau/' + repo.name + '.svg', 'alt': 'Issues'}))));
+			row.append($('<td />', {}).append($('<a />', {'href': github + repo.user + '/' + repo.name + '/issues', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/issues/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Issues'}))));
 			
 			// Dependencies
-			row.append($('<td />', {}).append($('<a />', {'href': david + repo.name, 'target': '_blank'}).append($('<img />', {'src': 'https://badges.greenkeeper.io/Zefau/' + repo.name + '.svg', 'alt': 'Dependencies'}))));
+			row.append($('<td />', {}).append($('<a />', {'href': david + repo.user + '/' + repo.name, 'target': '_blank'}).append($('<img />', {'src': 'https://badges.greenkeeper.io/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Dependencies'}))));
 			
 			// Vulnerabilities
-			row.append($('<td />', {}).append($('<img />', {'src': 'https://img.shields.io/snyk/vulnerabilities/github/Zefau/' + repo.name + '.svg', 'alt': 'Vulnerabilities'})));
+			row.append($('<td />', {}).append($('<img />', {'src': 'https://img.shields.io/snyk/vulnerabilities/github/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Vulnerabilities'})));
 			
 			$('#'+key).append(row);
 		});
