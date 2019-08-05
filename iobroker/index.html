@@ -59,6 +59,9 @@ $(document).ready(function()
 			// Stars (Github)
 			row.append($('<td />', {}).append($('<a />', {'href': github + repo.user + '/' + repo.name + '/stargazers', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/stars/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Github Stars'}))));
 			
+			// Watchers (Github)
+			row.append($('<td />', {}).append($('<a />', {'href': github + repo.user + '/' + repo.name + '/watchers', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/watchers/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Github Watchers'}))));
+			
 			// Stable (ioBroker)
 			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': iobroker + repo.key + '-stable.svg', 'target': '_blank'}).append($('<img />', {'src': iobroker + repo.key + '-stable.svg', 'alt': 'Stable Release'}))));
 			
@@ -93,6 +96,7 @@ $(document).ready(function()
 			<th>Adapter</th>
 			<th>Installations</th>
 			<th>Stars</th>
+			<th>Watchers</th>
 			<th>Stable</th>
 			<th>Latest</th>
 			<th>Travis</th>
@@ -111,6 +115,7 @@ $(document).ready(function()
 		<tr>
 			<th>Repository</th>
 			<th>Stars</th>
+			<th>Watchers</th>
 			<th>NPM</th>
 			<th>Issues</th>
 			<th>Dependencies</th>
