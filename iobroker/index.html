@@ -80,6 +80,9 @@ $(document).ready(function()
 			// Dependencies
 			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': david + repo.user + '/' + repo.name, 'target': '_blank'}).append($('<img />', {'src': 'https://david-dm.org/' + repo.user + '/' + repo.name + '/status.svg', 'alt': 'Dependencies'}))));
 			
+			// DevDependencies
+			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': david + repo.user + '/' + repo.name + '?type=dev', 'target': '_blank'}).append($('<img />', {'src': 'https://david-dm.org/' + repo.user + '/' + repo.name + '/dev-status.svg', 'alt': 'Dependencies'}))));
+			
 			$('#'+key).append(row);
 		});
 	}
@@ -103,6 +106,7 @@ $(document).ready(function()
 			<th>Travis</th>
 			<th>Issues</th>
 			<th>Dependencies</th>
+			<th>DevDependencies</th>
 		</tr>
 	</thead>
 	<tbody id="iobroker">
