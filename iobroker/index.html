@@ -78,10 +78,7 @@ $(document).ready(function()
 			row.append($('<td />', {}).append($('<a />', {'href': github + repo.user + '/' + repo.name + '/issues', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/issues/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Issues'}))));
 			
 			// Dependencies
-			row.append($('<td />', {}).append($('<a />', {'href': david + repo.user + '/' + repo.name, 'target': '_blank'}).append($('<img />', {'src': 'https://badges.greenkeeper.io/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Dependencies'}))));
-			
-			// Vulnerabilities
-			row.append($('<td />', {}).append($('<img />', {'src': 'https://img.shields.io/snyk/vulnerabilities/github/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Vulnerabilities'})));
+			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': david + repo.user + '/' + repo.name, 'target': '_blank'}).append($('<img />', {'src': 'https://david-dm.org/' + repo.user + '/' + repo.name + '/status.svg', 'alt': 'Dependencies'}))));
 			
 			$('#'+key).append(row);
 		});
@@ -106,7 +103,6 @@ $(document).ready(function()
 			<th>Travis</th>
 			<th>Issues</th>
 			<th>Dependencies</th>
-			<th>Vulnerabilities</th>
 		</tr>
 	</thead>
 	<tbody id="iobroker">
@@ -123,8 +119,6 @@ $(document).ready(function()
 			<th>Forks</th>
 			<th>NPM</th>
 			<th>Issues</th>
-			<th>Dependencies</th>
-			<th>Vulnerabilities</th>
 		</tr>
 	</thead>
 	<tbody id="apis">
