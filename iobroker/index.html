@@ -51,7 +51,7 @@ $(document).ready(function()
 		repositories[key].forEach(function(repo)
 		{
 			repo.user = repo.user || 'Zefau';
-			let row = $('<tr />', repo.develoment === false ? {css: {backgroundColor: '#ccc', textDecoration: 'line-through'}} : {});
+			let row = $('<tr />', repo.development === false ? {css: {backgroundColor: '#ccc', textDecoration: 'line-through'}} : {});
 			
 			// Name
 			row.append($('<td />', {}).append($('<a />', {'text': repo.name, 'href': github + repo.user + '/' + repo.name})));
