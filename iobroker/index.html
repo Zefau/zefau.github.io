@@ -33,7 +33,7 @@ const repositories = {
 		{name: 'ioBroker.nuki2', key: 'nuki2'},
 		{name: 'ioBroker.plex', key: 'plex'},
 		
-		{name: 'ioBroker.roomba', key: 'roomba', user: 'iobroker-community-adapters', npm: 'Zefau'},
+		{name: 'ioBroker.roomba', key: 'roomba', user: 'iobroker-community-adapters'},
 		{name: 'ioBroker.nello', key: 'nello', development: false}
 	],
 	
@@ -80,12 +80,6 @@ $(document).ready(function()
 			// Issues (Github)
 			row.append($('<td />', {}).append($('<a />', {'href': github + repo.user + '/' + repo.name + '/issues', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/issues/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Issues'}))));
 			
-			// Dependencies
-			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': david + repo.user + '/' + repo.name, 'target': '_blank'}).append($('<img />', {'src': 'https://david-dm.org/' + repo.user + '/' + repo.name + '/status.svg', 'alt': 'Dependencies'}))));
-			
-			// DevDependencies
-			if (key == 'iobroker') row.append($('<td />', {}).append($('<a />', {'href': david + repo.user + '/' + repo.name + '?type=dev', 'target': '_blank'}).append($('<img />', {'src': 'https://david-dm.org/' + repo.user + '/' + repo.name + '/dev-status.svg', 'alt': 'Dependencies'}))));
-			
 			$('#'+key).append(row);
 		});
 	}
@@ -108,8 +102,6 @@ $(document).ready(function()
 			<th>Latest</th>
 			<th>Travis</th>
 			<th>Issues</th>
-			<th>Dependencies</th>
-			<th>DevDependencies</th>
 		</tr>
 	</thead>
 	<tbody id="iobroker">
