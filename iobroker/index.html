@@ -80,6 +80,9 @@ $(document).ready(function()
 			// Issues (Github)
 			row.append($('<td />', {}).append($('<a />', {'href': github + repo.user + '/' + repo.name + '/issues', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/issues/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Issues'}))));
 			
+			// Pull Requests (Github)
+			row.append($('<td />', {}).append($('<a />', {'href': github + repo.user + '/' + repo.name + '/pulls', 'target': '_blank'}).append($('<img />', {'src': 'https://img.shields.io/github/issues-pr/' + repo.user + '/' + repo.name + '.svg', 'alt': 'Pull Requests'}))));
+			
 			$('#'+key).append(row);
 		});
 	}
@@ -102,6 +105,7 @@ $(document).ready(function()
 			<th>Latest</th>
 			<th>Travis</th>
 			<th>Issues</th>
+			<th>Pull Requests</th>
 		</tr>
 	</thead>
 	<tbody id="iobroker">
