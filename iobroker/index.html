@@ -27,13 +27,14 @@ const david = 'https://david-dm.org/';
 
 const repositories = {
 	iobroker: [
-		{name: 'ioBroker.roomba', key: 'roomba'},
-		{name: 'ioBroker.nuki2', key: 'nuki2'},
-		{name: 'ioBroker.nuki-extended', key: 'nuki-extended'},
-		{name: 'ioBroker.nello', key: 'nello'},
-		{name: 'ioBroker.plex', key: 'plex'},
 		{name: 'ioBroker.hue-extended', key: 'hue-extended'},
-		{name: 'ioBroker.jarvis', key: 'jarvis'}
+		{name: 'ioBroker.jarvis', key: 'jarvis'},
+		{name: 'ioBroker.nuki-extended', key: 'nuki-extended'},
+		{name: 'ioBroker.nuki2', key: 'nuki2'},
+		{name: 'ioBroker.plex', key: 'plex'},
+		
+		{name: 'ioBroker.roomba', key: 'roomba', user: 'iobroker-community-adapters', npm: 'Zefau'},
+		{name: 'ioBroker.nello', key: 'nello', development: false}
 	],
 	
 	apis: [
@@ -50,7 +51,7 @@ $(document).ready(function()
 		repositories[key].forEach(function(repo)
 		{
 			repo.user = repo.user || 'Zefau';
-			let row = $('<tr />', {});
+			let row = $('<tr />', repo.develoment === false ? {css: {backgroundColor: '#ccc', textDecoration: 'line-through'}} : {});
 			
 			// Name
 			row.append($('<td />', {}).append($('<a />', {'text': repo.name, 'href': github + repo.user + '/' + repo.name})));
